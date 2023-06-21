@@ -1,13 +1,9 @@
- #include <stdio.h>  
+#include <stdio.h>
 
- /**
- * main- Entry point
- * @void: Null value
- *
- * Description: Print numbers from 00 to 99
- * Return: Zero value
+/**
+ * main - print all formation numbers
+ * Return: Always 0 (success)
  */
-
 int main(void)
 {
 	int i = 0;
