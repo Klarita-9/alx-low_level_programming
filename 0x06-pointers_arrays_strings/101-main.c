@@ -8,7 +8,7 @@
 int main(void)
 {
 print_number(98);
-int_putchar('\n');
+_putchar('\n');
 print_number(402);
 _putchar('\n');
 print_number(1024);
@@ -19,3 +19,4 @@ print_number(-98);
 _putchar('\n');
 return (0);
 }
+
