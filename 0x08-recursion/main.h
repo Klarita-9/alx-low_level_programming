@@ -1,7 +1,7 @@
 #ifndef main_h
 #define main_h
 
-int _putchar.c(char c);
+int _putchar(char c);
 void _print_rev_recursion(char *s);
 int _strlen_recursion(char *s);
 int factorial(int n);
