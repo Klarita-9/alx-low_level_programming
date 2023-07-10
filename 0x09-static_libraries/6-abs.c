@@ -1,4 +1,5 @@
 #include "main.h"
+<<<<<<< HEAD
 
 /**
  * _abs - This is a absolute value
@@ -23,5 +24,22 @@ int _abs(int a)
 	{
 		return (a);
 	}
+=======
+/**
+ * _abs - compute the absolute value of an integer
+ * @n: int type number
+ * Return: absolute value of @n
+ */
+int _abs(int n)
+{
+if (n < 0)
+{
+return (n * -1);
+}
+else
+{
+return (n);
+}
+>>>>>>> f5616404d00233773039bdeff86ccbd8892cf18d
 }
 
