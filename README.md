@@ -1,2 +1,1 @@
-#0x00. C - Hello, World
-ALX tasks
+0x12. C - Singly linked lists
