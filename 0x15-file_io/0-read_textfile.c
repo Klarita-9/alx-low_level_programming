@@ -1,8 +1,8 @@
-#include "main_h"
+#include "main.h"
 /**
  * read_textfile - read a textfile.
  * @filename: name of the file to open.
- * @letters: number of letters to print in the standar ouput.
+ * @letters: number of letters to print in the standar output.
  *
  * Return: number of letter printed.
  */
@@ -36,4 +36,3 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	free(buf_letters);
 	return (count_chars);
 }
-
