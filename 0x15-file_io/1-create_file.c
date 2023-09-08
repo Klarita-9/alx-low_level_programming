@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * create_file - creates a file
  * @filename: filename.
@@ -9,30 +8,35 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	int fd;
-	int nletters;
-	int rwr;
+	int fd_open, fd_write;
 
-	if (!filename)
+	if (filename == NULL)
 		return (-1);
-
-	fd = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
-
-	if (fd == -1)
+	fd_open = open(filename, O_CREAT | O_TRUNC | O_RDWR, 0600);
+	if (fd_open == -1)
 		return (-1);
-
-	if (!text_content)
-		text_content = "";
-
-	for (nletters = 0; text_content[nletters]; nletters++)
-		;
-
-	rwr = write(fd, text_content, nletters);
-
-	if (rwr == -1)
-		return (-1);
-
-	close(fd);
-
+	if (text_content != NULL)
+	{
+		fd_write = write(fd_open, text_content, _strlen(text_content));
+		if (fd_write == -1)
+			return (-1);
+	}
+	close(fd_open);
 	return (1);
 }
+
+/**
+ * _strlen - calculate the length of a string.
+ * @str: array of characters.
+ *
+ * Return: length of the string.
+ */
+int _strlen(char *str)
+{
+	int count = 0;
+
+	while (*str++)
+		count++;
+	return (count);
+}
+
