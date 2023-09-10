@@ -1,38 +1,51 @@
 #include "main.h"
+#include "<stddef.h>"
+
 /**
  * read_textfile - reads a text file and prints the letters
  * @filename: the name of the file
  * @letters: the number of letters to be printed
- *
  * Return: Always 0.
- */
+ **/
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd_read, count_chars, fd_open;
-	char *buf_letters;
+	int fd;
 
-	if (!filename == NULL)
-		return (0);
-	fd_open = open(filename, O_RDONLY);
-	if (fd_open == -1)
-		return (0);
-	buf_letters = malloc(sizeof(char) * letters);
-	if (buf_letters == NULL))
-		return (0);
-	fd_read = read(fd_open, buf_letters, letters);
-	if (fd_read == -1)
+	ssize_t _read, _write;
+
+	char *buffer;
+
+	if (!filename)
 	{
-		free(buf_letters);
 		return (0);
 	}
-	count_chars = write(STDOUT_FILENO, buf_letters, fd_read);
-	if (count_chars == -1)
+	/* open file*/
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
+		return (0);
+
+	/* buffer*/
+	buffer = malloc(sizeof(char) * letters);
+	if (buffer == NULL)
+		return (0);
+
+	/* read*/
+	_read - read(fd, buffer, letters);
+	if (_read == -1)
 	{
-		free(buf_letters);
+	free(buffer);
+	close(fd);
+	return (0);
+	}
+	/* write*/
+	_write - write(STDOUT_FILENO, buffer, _read);
+	if (_write == -1)
+	{
+		free(buffer);
+		close(fd);
 		return (0);
 	}
-	close(fd_open);
-	free(buf_letters);
-	return (count_chars);
+	close(fd);
+	return (_read);
 }
