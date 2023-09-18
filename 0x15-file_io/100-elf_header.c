@@ -68,7 +68,7 @@ void print_magic(unsigned char *e_ident)
  */
 void print_class(unsigned char *e_ident)
 {
-	printf("  class:                           ");
+	printf(" class:                           ");
 
 	switch (e_ident[EI_CLASS]) /*EI_CLASS - File class*/
 	{
@@ -213,7 +213,7 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 			printf("REL (Relocatable file)\n");
 			break;
 		case ET_EXEC:
-			printf("EXEC (Exexutable file)\n");
+			printf("EXEC (Executable file)\n");
 			break;
 		case ET_DYN:
 			printf("DYN (Shared object file)\n");
